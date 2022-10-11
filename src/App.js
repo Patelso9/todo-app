@@ -15,7 +15,10 @@ class App extends Component {
         {/* <FirstComponent />
         <SecondComponent />
         <ThirdComponent /> */}
-        <Counter></Counter>
+        <Counter by={1}/>
+        <Counter by={2}/>
+        <Counter by={5}/>
+        <Counter by={10}/>
       </div>
     );
   }

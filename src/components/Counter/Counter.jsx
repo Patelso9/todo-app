@@ -18,12 +18,12 @@ class Counter extends Component {
   }
 
   render () {
-    const style = {fontSize : "100px", padding : "30px 50px"}
+    // const style = {fontSize : "100px", padding : "30px 50px"}
   return (
     <div className="counter">
-        <button onClick={this.increment}>+1</button>
+        <button onClick={this.increment}>+{this.props.by}</button>
         <span className="count"
-          style={style}
+          // style={style}
         >{this.state.counter}</span>
         {/* <span className="count">{this.state.secondCounter}</span> */}
     </div>
@@ -34,7 +34,7 @@ class Counter extends Component {
   // console.log('increment')
   // this.state.counter++;  // Bad practice!
   this.setState({
-    counter: this.state.counter + 1,
+    counter: this.state.counter + this.props.by,
     // secondCounter: this.state.secondCounter + 1
   });
 
