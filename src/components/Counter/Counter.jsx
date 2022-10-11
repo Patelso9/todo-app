@@ -10,7 +10,6 @@ class Counter extends Component {
 
     this.state = { 
       counter : 0,
-      // secondCounter: 100 
     }
 
     this.increment = this.increment.bind(this);
@@ -24,7 +23,7 @@ class Counter extends Component {
         <CounterButton by={2} incrementMethod={this.increment}/>
         <CounterButton by={5} incrementMethod={this.increment}/>
         <CounterButton by={10} incrementMethod={this.increment}/>
-        <span className="count">Total: {this.state.counter}</span>
+        <span className="count">{this.state.counter}</span>
       </div>
     );
   }
@@ -60,9 +59,9 @@ class CounterButton extends Component {
   return (
     <div className="counter">
         <button onClick={this.increment}>+{this.props.by}</button>
-        <span className="count"
+        {/* <span className="count"
           // style={style}
-        >{this.state.counter}</span>
+        >{this.state.counter}</span> */}
     </div>
   )
 }
