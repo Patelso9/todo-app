@@ -6,6 +6,7 @@ import SecondComponent from './components/learning-examples/SecondComponent';
 import ThirdComponent from './components/learning-examples/ThirdComponent';
 import Counter from './components/Counter/Counter';
 import CounterButton from './components/Counter/Counter';
+import TodoApp from './components/todo/TodoApp';
 
  
 class App extends Component {
@@ -13,10 +14,13 @@ class App extends Component {
     return (
       <div className="counter">
        To-Do app project
-        {/* <FirstComponent />
+       <TodoApp />
+
+       {/* <Counter /> */}
+        {/* Learning Examples
+        <FirstComponent />
         <SecondComponent />
         <ThirdComponent /> */}
-        <Counter />
       </div>
     );
   }
