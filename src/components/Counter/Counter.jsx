@@ -4,25 +4,45 @@ import './Counter.css';
 
 
 class Counter extends Component {
+
+  constructor(){
+    super(); 
+
+    this.state = { 
+      counter : 0,
+      // secondCounter: 100 
+    }
+
+    this.increment = this.increment.bind(this);
+  }
+
   render() {
     return (
       <div className="App">
-        {/* <FirstComponent />
-        <SecondComponent />
-        <ThirdComponent /> */}
-        <CounterButton by={1}/>
-        <CounterButton by={2}/>
-        <CounterButton by={5}/>
-        <CounterButton by={10}/>
+         Counting is Fun
+        <CounterButton by={1} incrementMethod={this.increment}/>
+        <CounterButton by={2} incrementMethod={this.increment}/>
+        <CounterButton by={5} incrementMethod={this.increment}/>
+        <CounterButton by={10} incrementMethod={this.increment}/>
+        <span className="count">Total: {this.state.counter}</span>
       </div>
     );
   }
+
+  increment(by){ 
+    console.log(`increment in parent + ${by}`)
+    this.setState({
+      counter: this.state.counter + by
+    });
+  
+   }
+
 }
 
 
 class CounterButton extends Component {
 
-// Define initial sttate in constructor
+// Define initial state in constructor
 // state => counter 0
 
   constructor(){
@@ -54,6 +74,7 @@ class CounterButton extends Component {
     counter: this.state.counter + this.props.by,
   });
 
+  this.props.incrementMethod(this.props.by);
  }
 
 }
