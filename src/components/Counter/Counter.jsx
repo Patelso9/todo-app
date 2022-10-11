@@ -65,43 +65,43 @@ class CounterButton extends Component {
   constructor(){
     super(); // Error 1: common to not include
 
-    this.state = { 
-      counter : 0,
-      // secondCounter: 100 
-    }
+    // this.state = { 
+    //   counter : 0,
+    //   // secondCounter: 100 
+    // }
 
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
+    // this.increment = this.increment.bind(this);
+    // this.decrement = this.decrement.bind(this);
   }
 
   render () {
   return (
     <div className="counter">
-        <button onClick={this.increment}>+{this.props.by}</button>
-        <button onClick={this.decrement}>-{this.props.by}</button>
+        <button onClick={() => this.props.incrementMethod(this.props.by)}>+{this.props.by}</button>
+        <button onClick={() => this.props.decrementMethod(this.props.by)}>-{this.props.by}</button>
         {/* <span className="count" >{this.state.counter}</span> */}
     </div>
   )
 }
 
- increment(){  // update state: counter ++
-  // console.log('increment')
-  // this.state.counter++;  // Bad practice!
-  this.setState({
-    counter: this.state.counter + this.props.by,
-  });
+//  increment(){  // update state: counter ++
+//   // console.log('increment')
+//   // this.state.counter++;  // Bad practice!
+//   this.setState({
+//     counter: this.state.counter + this.props.by,
+//   });
 
-  this.props.incrementMethod(this.props.by);
+//   this.props.incrementMethod(this.props.by);
 
-}
+// }
 
- decrement(){  
-  this.setState({
-    counter: this.state.counter - this.props.by,
-  });
+//  decrement(){  
+//   this.setState({
+//     counter: this.state.counter - this.props.by,
+//   });
 
-  this.props.decrementMethod(this.props.by);
- }
+//   this.props.decrementMethod(this.props.by);
+//  }
 
 }
 
