@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="counter">
-       To-Do app project
+
        <TodoApp />
 
        {/* <Counter /> */}
