@@ -11,6 +11,7 @@ class TodoApp extends Component {
                 <Route path="/" element={<LoginComponent />} /> 
                 <Route path="/login" element={<LoginComponentWithNav />}  />
                 <Route path="/welcome" element={<WelcomeCompoenent />}  />
+                <Route path="*" element={<ErrorComponent />}  />
         </Routes> </BrowserRouter>
         
         </div>
@@ -85,11 +86,10 @@ class LoginComponent extends Component {
 
 }
 
-// function ShowInvalidCredentials(props){
-//     if(props.hasLoginFailed){
-//         return <div>invalid credentials</div>
-//     }
-//     return <div>Sucessful login</div>
-// }
+function ErrorComponent(){
+    return(
+        <div>An Error has occured. I don't know what to do! Contact support at mail@mail.com</div>
+    )
+}
 
 export default TodoApp
