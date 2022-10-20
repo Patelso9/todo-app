@@ -28,8 +28,8 @@ class TodoApp extends Component {
                 {/* // <Route path="/logout" element={< />}  /> */}
                 <Route path="*" element={<ErrorComponent />}  />
             </Routes>
-            <FooterComponent />
         </Router> 
+            <FooterComponent />
         </div>
     )
   }
@@ -74,6 +74,8 @@ class LoginComponent extends Component {
     render() {
         return (
         <div>
+            <h1>Login</h1>
+            <div className='container'>
             {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
             {this.state.hasLoginFailed && <div className='alert alert-warning'>INVALID CREDENTIALS</div>}
             {this.state.showSucessMessage && <div>SUCCESS</div>}
@@ -83,7 +85,7 @@ class LoginComponent extends Component {
                 <button className='btn btn-success' onClick={this.loginClick}>Login</button>
             </div>
             {/* You can manage your todo list <Link to="/todo">here</Link> */}
-
+            </div>
         </div>
         )
     }
@@ -100,8 +102,7 @@ class WelcomeCompoenent extends Component {
     render(){
         return (
             <>
-                <h1>Welcome!
-                </h1>
+                <h1>Welcome!</h1>
                 <div className='container'> 
                     Welcome {this.props.params.name}.
                     You can manage your todo list <Link to="/todo">here</Link>
@@ -137,7 +138,7 @@ class HeaderComponent extends Component{
 class FooterComponent extends Component{
     render(){
         return(
-            <footer>
+            <footer className='footer'>
                 <span className="text-muted">All rights reserved: 2022 @turntofftea</span>
             </footer>
         )
